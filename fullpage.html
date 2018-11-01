@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>fullpage</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="fullpage.css">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="fullpage.min.js"></script>
+	<style>
+		#fullpage{width: 100%; height: 100%;}
+		#page1{background-image:url('../images/bg1.jpg');}
+		#page2{background-image:url('../images/bg2.jpg');}
+		#page3{background-image:url('../images/bg3.jpg');}
+		#page4{background-image:url('../images/bg4.jpg');}
+		.pages{width: 100%; height: 100%; background-repeat: no-repeat; background-position: center top; background-size:cover;}
+
+		#navTop{position: fixed;height: 50px; background:#cdcd; width: 100%; z-index: 9999;}
+		#navTop>ul{}
+		#navTop>ul:after{content:""; clear:both; display: block;}
+		#navTop>ul>li{float:left;}
+		#navTop>ul>li>a{display: block; line-height: 50px; text-align: center; padding:0 20px;}
+		#navTop>ul>li.active{background: rgba(221,231,242,.4);}
+		#navTop>ul>li.active>a{font-weight: bold}
+		.main_cmt{width: 400px; margin-left: 100px;}
+		.main_cmt p{text-shadow: 1px 1px 1px #292929; color: white; font-weight: bold;}
+		.main_cmt p:nth-child(1){font-size:4em;}
+		.main_cmt p:nth-child(2){font-size:2em;}
+		.main_cmt a{width: 100px; border:1px solid #fff; background: none; display: block; text-align: center; line-height: 45px; color: white; border-radius: 30px; margin-top: 40px;}
+		.main_cmt a:hover{background: #000; border:none; }
+
+		#page3{padding:15px 0 11px calc(50% - 50px);}
+
+		#fp-nav ul li a span, .fp-slidesNav ul li a span{background: #fff;}
+
+	</style>
+	<script>
+		$(function(){
+			$("#fullpage").fullpage({
+				licenseKey:'OPEN-SOURCE-GPLV3-LICENSE',
+				anchors:["1st","2st","3st","4st"],
+				menu:"#topMenu",
+				navigation:true,
+				navigationTooltips:['first-slide','second-silde','third-slide','fourth-slide'],
+				// 'afterLoad':function(anchorsLink,index){
+				// 	if(index==2){
+				// 		$(".onview").addClass("mactive");
+				// 	}else{
+				// 		$(".onview").removeClass("mactive");
+				// 	}
+				// }
+				// showActiveTooltip:true
+			});
+		});
+	</script>
+</head>
+<body>
+	<nav id="navTop">
+		<ul id="topMenu">
+			<li data-menuanchor="1st"><a href="#1st">MENU1</a></li>
+			<li data-menuanchor="2st"><a href="#2st">MENU2</a></li>
+			<li data-menuanchor="3st"><a href="#3st">MENU3</a></li>
+			<li data-menuanchor="4st"><a href="#4st">MENU4</a></li>
+		</ul>
+	</nav>
+	<div id="fullpage">
+		<div class="section pages" id="page1" data-anchor="1st">
+			<div class="slide">
+				<div class="main_cmt">
+					<div class="onview">
+						<p>Lorem ipsum.</p>
+						<p>Lorem ipsum dolor sit.</p>
+						<a href="#">more</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="main_cmt">
+					<p>Lorem ipsum.</p>
+					<p>Lorem ipsum dolor sit.</p>
+					<a href="#">more</a>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="main_cmt">
+					<p>Lorem ipsum.</p>
+					<p>Lorem ipsum dolor sit.</p>
+					<a href="#">more</a>
+				</div>
+			</div>
+		</div>
+		<div class="section pages" id="page2" data-anchor="2st">
+			<div class="main_cmt">
+				<p>Lorem ipsum.</p>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">more</a>
+			</div>
+		</div>
+		<div class="section pages" id="page3" data-anchor="3st">
+			<div class="main_cmt">
+				<p>Lorem ipsum.</p>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">more</a>
+			</div>
+		</div>
+		<div class="section pages" id="page4" data-anchor="4st">
+			<div class="main_cmt">
+				<p>Lorem ipsum.</p>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">more</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
